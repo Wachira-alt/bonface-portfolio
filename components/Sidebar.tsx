@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { nav, site } from "@/lib/data";
+import { nav, portrait, site } from "@/lib/data";
+import Photo from "@/components/Photo";
 
 function useActiveSection(ids: string[]) {
   const [active, setActive] = useState("");
@@ -33,17 +34,7 @@ export default function Sidebar() {
   return (
     <header className="pt-14 pb-12 lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[38%] lg:max-w-sm lg:flex-col lg:justify-between lg:py-24">
       <div>
-        <div
-          className="mb-7 grid h-24 w-24 place-items-center overflow-hidden rounded-full border text-center text-[0.625rem] uppercase tracking-wider"
-          style={{ borderColor: "var(--line)", background: "var(--bg-card)", color: "var(--ink-3)" }}
-        >
-          {site.photo ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={site.photo} alt={site.name} className="h-full w-full object-cover" />
-          ) : (
-            <span className="px-2 leading-tight">Photo<br />to add</span>
-          )}
-        </div>
+        <Photo photo={portrait} className="mb-7 h-28 w-28" rounded="rounded-full" sizes="112px" />
         <h1 className="font-serif text-4xl font-semibold tracking-tight sm:text-5xl">{site.name}</h1>
         <p className="mt-3 text-base font-medium sm:text-lg" style={{ color: "var(--accent)" }}>
           {site.title}

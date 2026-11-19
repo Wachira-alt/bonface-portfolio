@@ -33,7 +33,26 @@ export const site = {
   linkedin: "", // TODO: add LinkedIn URL if there is one; the link hides when empty
   // Put an edited CV (no phone, TSC no. or referees) at public/cv.pdf, then set this to "/cv.pdf".
   cvUrl: "",
-  photo: "", // e.g. "/photo.jpg" — a placeholder frame shows while empty
+};
+
+/**
+ * Photos. Put files in public/images/ and set `src` (e.g. "/images/portrait.jpg").
+ * While `src` is empty, a placeholder frame shows the `brief` so whoever takes the
+ * photo knows what is wanted. No identifiable students without written consent.
+ */
+export type Photo = { src: string; alt: string; brief: string };
+
+export const portrait: Photo = {
+  src: "",
+  alt: "Bonface Opwoko",
+  brief: "Portrait",
+};
+
+export const labPhoto: Photo & { caption: string } = {
+  src: "",
+  alt: "Bonface running a practical in the Woodcreek science lab",
+  brief: "Wide photo, 3:2. Bonface at a lab bench during a practical, natural light. Students from behind or hands only.",
+  caption: "",
 };
 
 export const nav = [
@@ -116,10 +135,34 @@ export const results = {
   todo: "TODO: Say what the mean is (percentage? points?) and compare it with something, such as the school average, last year or Cambridge-wide results. Confirm the school is happy for this to be public.",
 };
 
-export const resources: string[] = [
-  "TODO: A worksheet, revision guide or scheme of work (PDF in /public), with one line on how it's used.",
-  "TODO: A practical students do, and what they get out of it.",
-  "TODO: Something introduced as Head of Science and what changed because of it.",
+export type Resource = {
+  title: string;
+  description: string;
+  file: string; // PDF in public/resources/, e.g. "/resources/osmosis-practical.pdf"
+  thumb: Photo; // image of the first page, 3:4
+};
+
+const thumbBrief = "First page of the PDF, 3:4";
+
+export const resources: Resource[] = [
+  {
+    title: "TODO: A worksheet, revision guide or scheme of work",
+    description: "TODO: One line on how it's used.",
+    file: "",
+    thumb: { src: "", alt: "", brief: thumbBrief },
+  },
+  {
+    title: "TODO: A practical students do",
+    description: "TODO: What students get out of it.",
+    file: "",
+    thumb: { src: "", alt: "", brief: thumbBrief },
+  },
+  {
+    title: "TODO: Something introduced as Head of Science",
+    description: "TODO: What changed because of it.",
+    file: "",
+    thumb: { src: "", alt: "", brief: thumbBrief },
+  },
 ];
 
 export const education: Credential[] = [

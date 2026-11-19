@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/data";
 
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
-const fraunces = Fraunces({ variable: "--font-fraunces", subsets: ["latin"] });
+const sans = Source_Sans_3({ variable: "--font-body", subsets: ["latin"] });
+const serif = Source_Serif_4({ variable: "--font-heading", subsets: ["latin"] });
 
 const title = `${site.name} · ${site.title}`;
 
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GB" className={`${inter.variable} ${fraunces.variable}`}>
+    <html lang="en-GB" className={`${sans.variable} ${serif.variable}`}>
       <body>{children}</body>
     </html>
   );
