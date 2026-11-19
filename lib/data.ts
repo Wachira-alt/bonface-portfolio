@@ -28,7 +28,7 @@ export type Photo = { src: string; alt: string; credit?: { text: string; url: st
 
 export const portrait: Photo = { src: "", alt: "Bonface Opwoko" };
 
-// Set once a photo is chosen (see public/images/CREDITS.md).
+// Lab photo: see public/images/CREDITS.md for the chosen options and how to set this.
 export const labPhoto: Photo = { src: "", alt: "" };
 
 export const nav = [
