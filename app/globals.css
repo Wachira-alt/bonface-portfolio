@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
+:root {
+  --bg: #f6f4ee;
+  --bg-card: #fffdf8;
+  --ink: #1b201d;
+  --ink-2: #4c5650;
+  --ink-3: #7c847f;
+  --line: #e2ddd1;
+  --accent: #2c6a4e;
+  --accent-soft: #2c6a4e14;
+  --todo-bg: #fff4d6;
+  --todo-line: #e0b84a;
+  --todo-ink: #6b4e00;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111412;
+    --bg-card: #181c19;
+    --ink: #e8ebe8;
+    --ink-2: #aeb6b0;
+    --ink-3: #78817b;
+    --line: #2a302c;
+    --accent: #7cc4a0;
+    --accent-soft: #7cc4a01a;
+    --todo-bg: #3a3014;
+    --todo-line: #a88a2c;
+    --todo-ink: #f3dc95;
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent-soft); color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
