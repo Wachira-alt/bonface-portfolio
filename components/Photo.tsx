@@ -1,36 +1,30 @@
 import Image from "next/image";
 import type { Photo as PhotoData } from "@/lib/data";
 
-/** A photo from lib/data.ts, or a labelled placeholder frame while `src` is empty. */
-export default function Photo({ photo, className = "", sizes, rounded = "rounded-lg" }: {
+export default function Photo({ photo, className = "", sizes, rounded = "rounded-lg", fallback, priority }: {
   photo: PhotoData;
   className?: string; // sets size / aspect ratio
   sizes: string;
   rounded?: string;
+  fallback?: string; // shown when there is no image, e.g. initials
+  priority?: boolean;
 }) {
   return (
     <div
-      className={`relative overflow-hidden border ${rounded} ${className}`}
-      style={{ borderColor: "var(--line)", background: "var(--bg-card)" }}
+      className={`relative overflow-hidden ${rounded} ${className}`}
+      style={{ background: "var(--accent-soft)" }}
     >
       {photo.src ? (
-        <Image src={photo.src} alt={photo.alt} fill sizes={sizes} className="object-cover" />
+        <Image src={photo.src} alt={photo.alt} fill sizes={sizes} className="object-cover" priority={priority} />
       ) : (
-        <div
-          className="absolute inset-0 grid place-items-center p-3 text-center text-[0.6875rem] leading-snug"
-          style={{
-            color: "var(--ink-3)",
-            backgroundImage:
-              "repeating-linear-gradient(135deg, transparent 0 10px, color-mix(in srgb, var(--line) 55%, transparent) 10px 11px)",
-          }}
+        <span
+          className="absolute inset-0 grid place-items-center font-serif text-3xl font-semibold"
+          style={{ color: "var(--accent)" }}
+          aria-label={photo.alt}
           role="img"
-          aria-label={`Photo to add: ${photo.brief}`}
         >
-          <span className="rounded px-1.5 py-0.5" style={{ background: "var(--bg-card)" }}>
-            <span className="block font-semibold uppercase tracking-wider">Photo to add</span>
-            <span className="block">{photo.brief}</span>
-          </span>
-        </div>
+          {fallback}
+        </span>
       )}
     </div>
   );

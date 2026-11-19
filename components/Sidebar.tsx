@@ -34,7 +34,7 @@ export default function Sidebar() {
   return (
     <header className="pt-14 pb-12 lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[38%] lg:max-w-sm lg:flex-col lg:justify-between lg:py-24">
       <div>
-        <Photo photo={portrait} className="mb-7 h-28 w-28" rounded="rounded-full" sizes="112px" />
+        <Photo photo={portrait} fallback={site.initials} className="mb-7 h-24 w-24" rounded="rounded-full" sizes="96px" priority />
         <h1 className="font-serif text-4xl font-semibold tracking-tight sm:text-5xl">{site.name}</h1>
         <p className="mt-3 text-base font-medium sm:text-lg" style={{ color: "var(--accent)" }}>
           {site.title}
@@ -69,27 +69,22 @@ export default function Sidebar() {
       </div>
 
       <div className="mt-8 flex flex-wrap items-center gap-3">
-        <a
-          href={site.cvUrl || undefined}
-          aria-disabled={!site.cvUrl}
-          className="rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-90"
-          style={{
-            background: "var(--accent)",
-            color: "var(--bg)",
-            opacity: site.cvUrl ? 1 : 0.45,
-            cursor: site.cvUrl ? "pointer" : "not-allowed",
-          }}
-          title={site.cvUrl ? undefined : "Add the edited CV to public/cv.pdf"}
-          download={site.cvUrl ? true : undefined}
-        >
-          Download CV
-        </a>
+        {site.cvUrl && (
+          <a
+            href={site.cvUrl}
+            download
+            className="rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-90"
+            style={{ background: "var(--accent)", color: "var(--bg)" }}
+          >
+            Download CV
+          </a>
+        )}
         <a
           href={`mailto:${site.email}`}
           className="rounded-full border px-5 py-2.5 text-sm font-medium transition-colors hover:border-[var(--accent)]"
           style={{ borderColor: "var(--line)", color: "var(--ink)" }}
         >
-          Email me
+          Contact
         </a>
         {site.linkedin && (
           <a href={site.linkedin} target="_blank" rel="noopener noreferrer" className="px-2 text-sm underline-offset-4 hover:underline" style={{ color: "var(--ink-2)" }}>

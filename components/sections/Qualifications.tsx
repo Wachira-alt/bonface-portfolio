@@ -1,5 +1,5 @@
 import Section from "@/components/Section";
-import { development, education, languages, site } from "@/lib/data";
+import { development, education, labPhoto, languages, site } from "@/lib/data";
 
 export default function Qualifications() {
   return (
@@ -32,6 +32,14 @@ export default function Qualifications() {
       <footer className="mt-20 text-xs" style={{ color: "var(--ink-3)" }}>
         References available on request ·{" "}
         <a href={`mailto:${site.email}`} className="underline underline-offset-4">{site.email}</a>
+        {labPhoto.credit && (
+          <span className="mt-2 block">
+            Photo:{" "}
+            <a href={labPhoto.credit.url} className="underline underline-offset-4" target="_blank" rel="noopener noreferrer">
+              {labPhoto.credit.text}
+            </a>
+          </span>
+        )}
       </footer>
     </Section>
   );

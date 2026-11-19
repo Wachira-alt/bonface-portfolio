@@ -1,24 +1,25 @@
 # Bonface Opwoko — teaching portfolio
 
-Next.js 16 + Tailwind 4. All content is in `lib/data.ts`.
+Next.js 16 + Tailwind 4. All content is in `lib/data.ts`, written from Bonface's CV (2026).
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
+Not published on purpose: phone number, TSC number, Cambridge Specialist ID, referees.
+
+## Photos
+
+- `public/images/` holds the photos. Licensed stock photos are listed with author and licence in `public/images/CREDITS.md` and credited in the site footer.
+- The portrait shows Bonface's initials until a real photo is set in `portrait.src`.
+- Never use photos of identifiable students without written consent.
+
 ## Before launch
 
-Every string in `lib/data.ts` starting with `TODO:` shows on the page as a yellow "To add" box, and every photo with an empty `src` shows as a striped "Photo to add" frame describing the shot.
-
-- [ ] Teaching philosophy (About)
-- [ ] Results: unit, comparison, earlier years, school's permission to publish
-- [ ] Three resources (a worksheet or guide, a practical, a department initiative)
-- [ ] Portrait → `public/images/`, set `portrait.src`
-- [ ] Lab photo (3:2, students from behind or hands only) → `public/images/`, set `labPhoto.src`
-- [ ] Resource PDFs → `public/resources/`, plus a first-page image (3:4) for each in `public/images/`
-- [ ] Edited CV (no phone, TSC no., Specialist ID or referees) → `public/cv.pdf`, set `site.cvUrl`
-- [ ] LinkedIn URL (optional)
+- [ ] Bonface reviews and approves all content
+- [ ] Real portrait of Bonface → `public/images/`, set `portrait.src`
+- [ ] Optional: replace the stock lab photo with one taken at school
+- [ ] CV without phone, TSC no. or referees → `public/cv.pdf`, set `site.cvUrl`
 - [ ] Domain → `site.url`
-- [ ] Bonface approves all content
 - [ ] Turn on indexing: `robots` in `app/layout.tsx` and `app/robots.ts`

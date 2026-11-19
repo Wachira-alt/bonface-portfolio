@@ -1,13 +1,51 @@
 /**
  * All site content lives here.
  *
- * Any string that starts with "TODO:" is a placeholder. It renders on the page
- * as a highlighted box so nothing unfinished goes live unnoticed. Search this
- * file for "TODO:" to find everything still to fill in.
- *
  * Source: Bonface's CV (2026). Deliberately NOT published: phone number,
  * TSC number, Cambridge Specialist ID and referees' details.
  */
+
+export const site = {
+  // Domain is a placeholder until one is bought; used for metadata only.
+  url: "https://example.com",
+  name: "Bonface Opwoko",
+  fullName: "Omumia Opwoko Bonface",
+  initials: "BO",
+  title: "Head of Science · Cambridge Biology & Chemistry",
+  tagline:
+    "Cambridge IGCSE and A Level Biology and Chemistry educator, examiner and science department leader, based in Nairobi.",
+  location: "Nairobi, Kenya",
+  email: "bonmumia@gmail.com",
+  linkedin: "", // the link shows only when set
+  cvUrl: "", // e.g. "/cv.pdf" — the button shows only when set. Use a CV without phone, TSC no. or referees.
+};
+
+/**
+ * Photos live in public/images/. `credit` is required for licensed stock photos.
+ * The portrait shows the initials until a real photo of Bonface is added.
+ */
+export type Photo = { src: string; alt: string; credit?: { text: string; url: string } };
+
+export const portrait: Photo = { src: "", alt: "Bonface Opwoko" };
+
+// Set once a photo is chosen (see public/images/CREDITS.md).
+export const labPhoto: Photo = { src: "", alt: "" };
+
+export const nav = [
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "examining", label: "Examining" },
+  { id: "results", label: "Results" },
+  { id: "qualifications", label: "Qualifications" },
+];
+
+export const about: string[] = [
+  "Bonface Opwoko is Head of Science and Key Stage 4 Coordinator at Woodcreek School, Nairobi, teaching Biology and Chemistry within the Cambridge International curriculum.",
+  "Bonface has taught secondary Biology and Chemistry since 2007, at IGCSE, O Level, AS and A Level, in both Cambridge and Edexcel schools, including about twelve years of Cambridge IGCSE Biology (0610).",
+  "Bonface has led the science department at four schools and served as Head of Internal Examinations at Premier Academy.",
+  "Bonface is a Cambridge examiner and has worked on Cambridge IGCSE Biology assessment, including multiple-choice paper development.",
+  "The focus of the work is assessment: monitoring student performance closely, identifying learning gaps early and planning targeted support, so that students are well prepared for Cambridge examinations.",
+];
 
 export type Role = {
   dates: string;
@@ -21,149 +59,76 @@ export type EarlyRole = { dates: string; school: string; titles: string };
 
 export type Credential = { dates: string; title: string; place: string };
 
-export const site = {
-  // Domain is a placeholder until one is bought; used for metadata only.
-  url: "https://example.com",
-  name: "Bonface Opwoko",
-  fullName: "Omumia Opwoko Bonface",
-  title: "Head of Science · Biology & Chemistry",
-  tagline: "I teach Cambridge Biology and Chemistry in Nairobi.",
-  location: "Nairobi, Kenya",
-  email: "bonmumia@gmail.com",
-  linkedin: "", // TODO: add LinkedIn URL if there is one; the link hides when empty
-  // Put an edited CV (no phone, TSC no. or referees) at public/cv.pdf, then set this to "/cv.pdf".
-  cvUrl: "",
-};
-
-/**
- * Photos. Put files in public/images/ and set `src` (e.g. "/images/portrait.jpg").
- * While `src` is empty, a placeholder frame shows the `brief` so whoever takes the
- * photo knows what is wanted. No identifiable students without written consent.
- */
-export type Photo = { src: string; alt: string; brief: string };
-
-export const portrait: Photo = {
-  src: "",
-  alt: "Bonface Opwoko",
-  brief: "Portrait",
-};
-
-export const labPhoto: Photo & { caption: string } = {
-  src: "",
-  alt: "Bonface running a practical in the Woodcreek science lab",
-  brief: "Wide photo, 3:2. Bonface at a lab bench during a practical, natural light. Students from behind or hands only.",
-  caption: "",
-};
-
-export const nav = [
-  { id: "about", label: "About" },
-  { id: "experience", label: "Experience" },
-  { id: "examining", label: "Examining" },
-  { id: "results", label: "Results" },
-  { id: "resources", label: "Resources" },
-  { id: "qualifications", label: "Qualifications" },
-];
-
-export const about: string[] = [
-  "I teach Biology and Chemistry at Woodcreek School in Nairobi, where I'm Head of Science and coordinate Key Stage 4.",
-  "I started teaching in 2007. Since then I've taught IGCSE, AS and A Level in Cambridge and Edexcel schools in Nairobi and Mombasa, and I've run the science department at four schools.",
-  "I also examine for Cambridge, and I've worked on IGCSE Biology assessment, including multiple-choice papers.",
-  "TODO: Teaching philosophy, 2–3 sentences in Bonface's own words. What does a good Biology lesson look like? How are students who fall behind supported?",
-];
-
 export const experience: Role[] = [
   {
     dates: "Feb 2024 — Present",
     school: "Woodcreek School",
-    place: "Nairobi · Cambridge",
-    titles: "Head of Science · Key Stage 4 Coordinator",
+    place: "Nairobi · Cambridge International",
+    titles: "Head of Science · Key Stage 4 Coordinator · Biology & Chemistry Teacher",
     description:
-      "I run the science department and teach Biology and Chemistry at O and A Level. As Key Stage 4 Coordinator I follow how Years 10 and 11 are doing and arrange extra support for students who fall behind. I'm also part of the school's student support, behaviour and safeguarding work.",
+      "Leads the Science Department, including departmental planning, academic standards and curriculum implementation, and teaches Biology and Chemistry at O and A Level. Coordinates Key Stage 4 academic and pastoral programmes for Years 10 and 11, monitors student performance and coordinates targeted intervention. Contributes to whole-school student support, behaviour, safeguarding and academic-progress systems.",
   },
   {
     dates: "Sep 2019 — Feb 2024",
     school: "Premier Academy",
-    place: "Cambridge",
-    titles: "Biology & Chemistry Teacher · Head of Internal Examinations",
+    place: "Cambridge International",
+    titles: "Biology & Chemistry Teacher · Key Stage 4 Coordinator · Head of Internal Examinations",
     description:
-      "I taught senior Biology and IGCSE Chemistry, ran the school's internal exams and coordinated Key Stage 4. I was also a Year 13 class teacher and a house master.",
+      "Taught senior Biology and IGCSE Chemistry and prepared students for Cambridge examinations. Led internal examination processes and assessment administration, and coordinated Key Stage 4 academic and student-support programmes. Also served as Year 13 Class Teacher and House Master.",
   },
   {
     dates: "Jan 2018 — Aug 2019",
     school: "Memon Academy – High",
-    place: "Mombasa · Cambridge",
-    titles: "Head of Science",
+    place: "Mombasa · Cambridge International",
+    titles: "Head of Science · Biology & Chemistry Teacher · Year 11 Class Teacher",
     description:
-      "I led the science department, taught senior Biology and Chemistry and was a Year 11 class teacher.",
+      "Led Science Department planning and academic coordination while teaching senior Biology and Chemistry, and provided academic and pastoral support to Year 11.",
   },
   {
     dates: "Aug 2013 — Dec 2017",
     school: "MSB Educational Institute",
     place: "Mombasa · Edexcel",
-    titles: "Head of Science · Senior School Examinations Officer",
+    titles: "Head of Science · Senior School Examinations Officer · Biology & Chemistry Teacher",
     description:
-      "I led the science department, taught O and A Level Biology and Chemistry and ran the senior school's exams.",
+      "Led the Science Department while teaching O and A Level Biology and Chemistry, and was responsible for senior-school examinations, assessment and academic administration.",
   },
   {
     dates: "Feb 2012 — Aug 2013",
     school: "Cambridge Centre – South C",
-    place: "Nairobi · Cambridge",
+    place: "Nairobi · Cambridge International",
     titles: "Chemistry Teacher",
-    description: "I taught Chemistry at IGCSE, O and A Level.",
+    description: "Taught Chemistry at IGCSE, O and A Level.",
   },
 ];
 
 export const earlyCareer: EarlyRole[] = [
-  { dates: "2012", school: "Headington Tuition Centre", titles: "Biology & Chemistry, ICT lead" },
-  { dates: "2011", school: "Lubinu Boys High School", titles: "Biology & Chemistry, Scouts, music, ICT lead" },
-  { dates: "2009", school: "Busombi Muslim Secondary School", titles: "Biology & Chemistry, Head of Science" },
-  { dates: "2007–08", school: "St. Bedas Bukaya Secondary School", titles: "Biology & Chemistry, Science Club" },
+  { dates: "2012", school: "Headington Tuition Centre", titles: "Biology & Chemistry Teacher, ICT Department Lead" },
+  { dates: "2011", school: "Lubinu Boys High School", titles: "Biology & Chemistry Teacher, ICT Department Lead, Assistant Scouts Patron, Music Trainer" },
+  { dates: "2009", school: "Busombi Muslim Secondary School", titles: "Biology & Chemistry Teacher, Head of Science" },
+  { dates: "2007–08", school: "St. Bedas Bukaya Secondary School", titles: "Biology & Chemistry Teacher, Science Club Patron, Assistant YCS Patron" },
 ];
 
-export const examining =
-  "I examine for Cambridge International. I've worked on Cambridge IGCSE Biology (0610) assessment, including multiple-choice paper development, and I took part in Cambridge's discussions on future IGCSE Science papers, including a focus group for science teachers.";
+export const examining: string[] = [
+  "Examiner for Cambridge International.",
+  "Experience setting and working with Cambridge IGCSE Biology (0610) assessment, including multiple-choice paper development.",
+  "Participant in Cambridge IGCSE Science prototype and future-paper discussions, and in an all-science-teachers focus group on future Science papers.",
+  "Experience in examination preparation, moderation and the use of assessment information to plan intervention.",
+];
 
 export const syllabuses = [
-  "Cambridge IGCSE Biology (0610), which I've taught for about 12 years",
+  "Cambridge IGCSE Biology (0610)",
   "Cambridge IGCSE Chemistry",
-  "Cambridge AS and A Level Biology",
-  "Edexcel O and A Level Biology and Chemistry",
+  "Cambridge AS & A Level Biology",
+  "Edexcel O & A Level Biology and Chemistry",
 ];
 
 export const results = {
-  text: "In June 2026 my Year 13 A Level Biology class had a mean of 77.0, and my Year 12 AS class 65.4.",
-  todo: "TODO: Say what the mean is (percentage? points?) and compare it with something, such as the school average, last year or Cambridge-wide results. Confirm the school is happy for this to be public.",
+  intro: "Biology results from the June 2026 assessment cycle at Woodcreek School.",
+  rows: [
+    { cohort: "Year 13", course: "A Level Biology", mean: "77.00" },
+    { cohort: "Year 12", course: "AS Level Biology", mean: "65.38" },
+  ],
 };
-
-export type Resource = {
-  title: string;
-  description: string;
-  file: string; // PDF in public/resources/, e.g. "/resources/osmosis-practical.pdf"
-  thumb: Photo; // image of the first page, 3:4
-};
-
-const thumbBrief = "First page of the PDF, 3:4";
-
-export const resources: Resource[] = [
-  {
-    title: "TODO: A worksheet, revision guide or scheme of work",
-    description: "TODO: One line on how it's used.",
-    file: "",
-    thumb: { src: "", alt: "", brief: thumbBrief },
-  },
-  {
-    title: "TODO: A practical students do",
-    description: "TODO: What students get out of it.",
-    file: "",
-    thumb: { src: "", alt: "", brief: thumbBrief },
-  },
-  {
-    title: "TODO: Something introduced as Head of Science",
-    description: "TODO: What changed because of it.",
-    file: "",
-    thumb: { src: "", alt: "", brief: thumbBrief },
-  },
-];
 
 export const education: Credential[] = [
   {
@@ -190,6 +155,7 @@ export const education: Credential[] = [
 
 export const development: string[] = [
   "Child Protection and Safeguarding training",
+  "Cambridge Science curriculum and assessment development",
   "Conferences on science, technology, innovation and environmental sustainability",
 ];
 

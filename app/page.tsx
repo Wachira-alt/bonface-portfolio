@@ -3,7 +3,6 @@ import About from "@/components/sections/About";
 import Experience from "@/components/sections/Experience";
 import Examining from "@/components/sections/Examining";
 import Results from "@/components/sections/Results";
-import Resources from "@/components/sections/Resources";
 import Qualifications from "@/components/sections/Qualifications";
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
           <Experience />
           <Examining />
           <Results />
-          <Resources />
           <Qualifications />
         </main>
       </div>
