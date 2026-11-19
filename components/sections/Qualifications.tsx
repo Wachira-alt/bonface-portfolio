@@ -1,5 +1,5 @@
 import Section from "@/components/Section";
-import { development, education, languages } from "@/lib/data";
+import { development, education, languages, site } from "@/lib/data";
 
 export default function Qualifications() {
   return (
@@ -29,6 +29,10 @@ export default function Qualifications() {
           </ul>
         </div>
       </div>
+      <footer className="mt-20 text-xs" style={{ color: "var(--ink-3)" }}>
+        References available on request ·{" "}
+        <a href={`mailto:${site.email}`} className="underline underline-offset-4">{site.email}</a>
+      </footer>
     </Section>
   );
 }

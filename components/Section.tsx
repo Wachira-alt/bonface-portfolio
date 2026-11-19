@@ -11,11 +11,10 @@ export default function Section({ id, title, children }: {
       >
         <h2
           id={`${id}-title`}
-          className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em]"
+          className="text-xs font-semibold uppercase tracking-[0.18em]"
           style={{ color: "var(--accent)" }}
         >
           {title}
-          <span className="hidden h-px flex-1 lg:block" style={{ background: "var(--line)" }} />
         </h2>
       </div>
       {children}

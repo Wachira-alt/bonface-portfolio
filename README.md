@@ -13,8 +13,7 @@ Every string in `lib/data.ts` starting with `TODO:` shows on the page as a yello
 
 - [ ] Teaching philosophy (About)
 - [ ] Results: unit, comparison, earlier years, school's permission to publish
-- [ ] Three "Teaching in practice" items (resource, practical, department initiative)
-- [ ] Two testimonials, with permission
+- [ ] Three resources (a worksheet or guide, a practical, a department initiative)
 - [ ] Photo → `public/photo.jpg`, set `site.photo`
 - [ ] Edited CV (no phone, TSC no., Specialist ID or referees) → `public/cv.pdf`, set `site.cvUrl`
 - [ ] LinkedIn URL (optional)
