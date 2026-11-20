@@ -1,3 +1,20 @@
-ignoredBuiltDependencies:
+# Only install package versions that have been public for at least 24 hours
+# (supply-chain safety; matches pnpm 11's default policy).
+minimumReleaseAge: 1440
+
+overrides:
+  # 1.2.3 and 1.2.4 were both released within 24h of this lockfile; pin the
+  # previous stable release.
+  source-map-js: 1.2.2
+
+# Which dependencies may run install scripts (pnpm 11).
+# sharp downloads its prebuilt binary for next/image; unrs-resolver isn't needed.
+allowBuilds:
+  sharp: true
+  unrs-resolver: false
+
+# Same decision for pnpm 10 and earlier.
+onlyBuiltDependencies:
   - sharp
+ignoredBuiltDependencies:
   - unrs-resolver
