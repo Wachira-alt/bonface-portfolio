@@ -40,11 +40,10 @@ export const nav = [
 ];
 
 export const about: string[] = [
-  "Bonface Opwoko is Head of Science and Key Stage 4 Coordinator at Woodcreek School, Nairobi, teaching Biology and Chemistry within the Cambridge International curriculum.",
-  "Bonface has taught secondary Biology and Chemistry since 2007, at IGCSE, O Level, AS and A Level, in both Cambridge and Edexcel schools, including about twelve years of Cambridge IGCSE Biology (0610).",
-  "Bonface has led the science department at four schools and served as Head of Internal Examinations at Premier Academy.",
-  "Bonface is a Cambridge examiner and has worked on Cambridge IGCSE Biology assessment, including multiple-choice paper development.",
-  "The focus of the work is assessment: monitoring student performance closely, identifying learning gaps early and planning targeted support, so that students are well prepared for Cambridge examinations.",
+  "I am Head of Science and Key Stage 4 Coordinator at Woodcreek School, Nairobi, where I teach Biology and Chemistry within the Cambridge International curriculum.",
+  "I have taught secondary Biology and Chemistry since 2007, at IGCSE, O Level, AS and A Level, in both Cambridge and Edexcel schools, including around twelve years of Cambridge IGCSE Biology (0610). I have led the science department at four schools and served as Head of Internal Examinations at Premier Academy.",
+  "I am a Cambridge examiner and have contributed to Cambridge IGCSE Biology assessment, including multiple-choice paper development.",
+  "My work centres on assessment: monitoring student performance closely, identifying learning gaps early and planning targeted support, so that students are well prepared for their examinations.",
 ];
 
 export type Role = {
